@@ -223,7 +223,7 @@ const fileFragmentColumns = [
 ];
 const fileFragmentData = ref([]);
 const handleFragment = (record) => {
-  knowledgeFragmentList(record.docId).then((res) => {
+  knowledgeFragmentList(record.docId, { kid: kid.value }).then((res) => {
     fileFragmentData.value = res.rows;
   });
   fileFragmentVisible.value = true;

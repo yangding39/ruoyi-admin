@@ -41,6 +41,8 @@ export function knowledgeFileDeleteByKnowledge(knowledgeId: any, docId: any) {
 }
 
 // 知识片段列表
-export function knowledgeFragmentList(id: any) {
-  return requestClient.get<any>(`${Api.knowledgeFragmentList}/${id}`);
+export function knowledgeFragmentList(id: any, params?: any) {
+  return requestClient.get<any>(`${Api.knowledgeFragmentList}/${id}`, {
+    params,
+  });
 }
