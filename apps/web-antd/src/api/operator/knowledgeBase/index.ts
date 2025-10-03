@@ -6,6 +6,7 @@ enum Api {
   knowledgeSave = '/knowledge/save',
   knowledgeDetail = '/knowledge/detail',
   knowledgeFileDelete = '/knowledge/attach/remove',
+  knowledgeFileDeleteByKnowledge = '/knowledge/attach/delete',
   knowledgeFragmentList = '/knowledge/fragment/list',
 }
 
@@ -32,6 +33,11 @@ export function knowledgeDetail(id: any) {
 // 附件删除
 export function knowledgeFileDelete(id: any) {
   return requestClient.post<any>(`${Api.knowledgeFileDelete}/${id}`);
+}
+
+// 根据知识库ID和文档ID删除附件
+export function knowledgeFileDeleteByKnowledge(knowledgeId: any, docId: any) {
+  return requestClient.post<any>(`${Api.knowledgeFileDeleteByKnowledge}/${knowledgeId}/${docId}`);
 }
 
 // 知识片段列表
